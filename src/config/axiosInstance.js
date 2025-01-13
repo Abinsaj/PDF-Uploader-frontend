@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = "http://www.stagmensfashion.online"
+const url = "https://pdf-uploader-server.onrender.com"
 
 const axiosInsance = axios.create({
     baseURL: url,
