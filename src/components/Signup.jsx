@@ -41,11 +41,11 @@ const Signup = () => {
         onSubmit: async(values,{resetForm})=>{
             try {
                 
-                const response = await registerUser(values)
+                const response = await registerUser(values.email)
                 console.log(response,'this is the response we got in frontend')
                 if(response.success){
-                    toast.success(response.message)
-                    navigate('/otp')
+                    toast.success('Otp send to the email')
+                    navigate('/otp',{state: values})
                 }
             } catch (error) {
                 console.log(error)

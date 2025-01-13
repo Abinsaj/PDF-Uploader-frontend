@@ -1,10 +1,12 @@
 import React, { useEffect, useState,useRef } from 'react'
 import { verifyOtp } from '../Service/userAxiosCall';
 import { toast } from 'sonner';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { values } from 'pdf-lib';
 
 const Otp = () => {
 
+    const location =  useLocation()
     const navigate = useNavigate()
     const [timeLeft, setTimeLeft] = useState(60)
     const [otp, setOtp] = useState(Array(6).fill(""));
@@ -59,7 +61,7 @@ const Otp = () => {
         const otpValue = otp.join('')
         console.log(otpValue)
         try {
-            const otpVerification = await verifyOtp(otpValue)
+            const otpVerification = await verifyOtp(otpValue,location.state)
             if(otpVerification.success){
                 toast.success(otpVerification.message)
                 navigate('/login')

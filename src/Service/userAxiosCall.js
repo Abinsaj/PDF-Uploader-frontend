@@ -1,10 +1,10 @@
 import axiosInsance from "../config/axiosInstance";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const registerUser = async(data)=>{
+export const registerUser = async(email)=>{
     try {
-        console.log(data, ' this is the data we got in the service')
-        const response = await axiosInsance.post('/signup', {data})
+
+        const response = await axiosInsance.post('/signup', {email:email})
         return response.data
     } catch (error) {
         if( error.response.data){
@@ -14,9 +14,9 @@ export const registerUser = async(data)=>{
     }
 }
 
-export const verifyOtp = async(otp)=>{
+export const verifyOtp = async(otp, data)=>{
     try {
-        const response = await axiosInsance.post('/otp', {otp})
+        const response = await axiosInsance.post('/otp', {otp,data})
         return response.data
     } catch (error) {
         if( error.response.data){
