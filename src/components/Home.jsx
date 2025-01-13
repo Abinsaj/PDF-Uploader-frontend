@@ -163,10 +163,13 @@ export default function Home() {
                 <div className="bg-white rounded-lg shadow-md w-full max-w-3xl p-8">
                     <div className="flex items-center mb-6 text-gray-700">
                         <User className="w-5 h-5 mr-2" />
-                        <div>
+                        {user && (
+                            <div>
                             <h2 className="font-semibold">{user.name}</h2>
                             <p className="text-sm">{user.email}</p>
                         </div>
+                        )}
+                        
                     </div>
 
                     <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">PDF Uploader</h1>
