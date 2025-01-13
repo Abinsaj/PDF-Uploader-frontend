@@ -125,6 +125,14 @@ const Login = () => {
                                     className='h-10 w-full px-1 py-2 rounded-md bg-black text-white  outline-none'>
                                     Login
                                 </button>
+
+                                <p className="mt-10 text-center text-sm text-gray-500">
+                                Don't have an GIGFLARE account?{' '}
+                                <a href="/signup" className="font-semibold leading-6 text-[#04A118] hover:text-[#04A118]">
+                                    Sign Up
+                                </a>
+                            </p>
+
                             </div>
 
                         </form>
