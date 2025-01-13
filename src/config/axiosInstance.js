@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = "http://localhost:5050"
+const url = "https://www.stagmensfashion.online"
 
 const axiosInsance = axios.create({
     baseURL: url,
