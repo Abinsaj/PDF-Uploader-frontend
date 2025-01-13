@@ -128,7 +128,7 @@ const Login = () => {
 
                                 <p className="mt-10 text-center text-sm text-gray-500">
                                 Don't have an GIGFLARE account?{' '}
-                                <a href="/signup" className="font-semibold leading-6 text-[#04A118] hover:text-[#04A118]">
+                                <a onClick={()=>navigate('/signup')} className="font-semibold leading-6 text-[#04A118] hover:text-[#04A118]">
                                     Sign Up
                                 </a>
                             </p>
