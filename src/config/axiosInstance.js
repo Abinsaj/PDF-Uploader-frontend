@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = "https://pdf-uploader-server.onrender.com"
+const url = "http://localhost:5050"
 
 const axiosInsance = axios.create({
     baseURL: url,

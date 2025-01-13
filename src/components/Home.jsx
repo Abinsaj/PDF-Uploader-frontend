@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { FileText, Upload, User, ChevronLeft, ChevronRight } from 'lucide-react';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
+
 import Navbar from './Navbar';
 import { useSelector } from 'react-redux';
 import { pdfUpload, getSelectedPage } from '../Service/userAxiosCall';
 import { toast } from 'sonner';
 import axios from 'axios';
 import { PDFDocument } from 'pdf-lib';
+import * as pdfjsLib from 'pdfjs-dist';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = '/node_modules/pdfjs-dist/legacy/build/pdf.worker.min.mjs';
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
 
 export default function Home() {
     const user = useSelector((state) => state.user.userInfo);
