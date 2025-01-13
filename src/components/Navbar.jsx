@@ -1,11 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
     const userInfo = useSelector((state)=>state.user.userInfo)
+    const navigate = useNavigate()
     const handleLogout = async()=>{
-        localStorage.clear()
+        localStorage.clear('accessToken')
+        localStorage.clear('userInfo')
+        navigate('/login')
     }
 
     return (
@@ -21,9 +25,9 @@ const Navbar = () => {
                 ):(
 
                 <div className='flex pr-5 pt-1 space-x-2'>
-                    <h2 className='font-semibold text-md '>LOGIN</h2>
+                    <h2 onClick={()=>navigate('/login')} className='font-semibold text-md '>LOGIN</h2>
                     <p>|</p>
-                    <h2 className='font-semibold text-md'>SIGNUP</h2>
+                    <h2 onClick={()=>navigate('/signup')} className='font-semibold text-md'>SIGNUP</h2>
                 </div>
                 )}
             </div>
