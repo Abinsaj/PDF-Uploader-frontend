@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { FileText, Upload, User, ChevronLeft, ChevronRight } from 'lucide-react';
-
 import Navbar from './Navbar';
 import { useSelector } from 'react-redux';
 import { pdfUpload, getSelectedPage } from '../Service/userAxiosCall';
